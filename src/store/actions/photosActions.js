@@ -64,6 +64,7 @@ export const createPhoto = photoData => {
             await axios.post("/photos", photoData, {headers})
             dispatch(createPhotoSuccess());
             dispatch(push("/"));
+            dispatch(fetchFailure());
         } catch (e) {
             if (e.response && e.response.data) {
                 dispatch(fetchFailure(e.response.data));
