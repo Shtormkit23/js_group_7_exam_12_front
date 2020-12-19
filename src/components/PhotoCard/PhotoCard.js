@@ -6,7 +6,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import imageNotAvailable from "../../download.png"
 import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
 import PropTypes from "prop-types";
 import {apiURL} from "../../constants";
@@ -34,7 +33,7 @@ const PhotoCard = ({id, title, image, photoUser, path}) => {
     let user = useSelector(state => state.users.user);
     const [open, setOpen] = useState(false);
 
-    let cardImage = imageNotAvailable;
+    let cardImage = "";
     if (image) {
         cardImage = apiURL + "/uploads/" + image;
     }
