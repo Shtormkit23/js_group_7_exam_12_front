@@ -72,7 +72,6 @@ const PhotoCreationForm = ({onSubmit}) => {
                     error={getFieldError("image")}
                     label="Image"
                     name="image"
-                    required={true}
                     onChange={fileChangeHandler}
                 />
             </FormControl>
