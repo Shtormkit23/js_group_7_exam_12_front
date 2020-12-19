@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import FormElement from "../Form/FormElement";
 import FileInput from "../Form/FileInput";
 import {useSelector} from "react-redux";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,6 +77,14 @@ const PhotoCreationForm = ({onSubmit}) => {
                 />
             </FormControl>
             <FormControl fullWidth className={classes.margin} variant="outlined">
+                {
+                    error && <Alert
+                        severity="error"
+                        className={classes.alert}
+                    >
+                        {error.errors["image"].message}
+                    </Alert>
+                }
                 <Button
                     type="submit"
                     color="primary"
